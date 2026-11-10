@@ -13,6 +13,8 @@ export const CoreServiceNames = {
   CUSTOMER_PROFILE: 'customerProfile',
   AI_ASSISTANT: 'aiAssistant',
   DISCREET_PRIVACY: 'discreetPrivacy',
+  GIFT_CARDS: 'giftCards',
+  SUPPORT_CENTER: 'supportCenter',
 } as const;
 
 export type CoreServiceName = typeof CoreServiceNames[keyof typeof CoreServiceNames];
