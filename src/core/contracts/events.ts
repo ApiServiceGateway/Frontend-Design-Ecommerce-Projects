@@ -72,6 +72,8 @@ export interface CoreEventMap {
   'STOCK_RELEASED': StockReleasedEventPayload;
   'PRODUCT_UPDATED': ProductUpdatedEventPayload;
   'WARRANTY_CLAIM_SUBMITTED': WarrantyClaimSubmittedEventPayload;
+  'ORDER_PAID': any;
+  'CAMOUFLAGE_ACTIVATED': any;
 }
 
 export type CoreEventName = keyof CoreEventMap;
