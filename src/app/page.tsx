@@ -782,33 +782,19 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
               key={item.id}
               className="product-card flex-none w-[205px] sm:w-[220px] bg-white rounded-xl border border-gray-200/90 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group relative select-none"
             >
-              <Link href={item.href} className="block relative w-full aspect-[3/4.2] overflow-hidden bg-stone-50">
-                {/* Yellow bookmark ribbon on top-left */}
-                {item.hasRibbon && (
-                  <div className="absolute top-0 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-xs">
-                    <div className="w-0.5 h-2 bg-teal-600 mb-[-1px]"></div>
-                    <div className="bg-[#f5a623] text-stone-900 w-5 pt-1 pb-1.5 rounded-b-xs flex flex-col items-center shadow-xs">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                      <span className="font-bold text-[9px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900 leading-none">
-                        Just in
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Action buttons at top right */}
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <button
-                    type="button"
-                    aria-label="Add to cart"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 border border-[#8ce3d7] text-[#00a896] hover:bg-[#e6faf7] flex items-center justify-center shadow-xs transition-colors cursor-pointer"
-                  >
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
-                  </button>
+              <div className="relative w-full aspect-[3/4.2] bg-stone-50">
+                {item.hasRibbon && <HangTag text="Just In" />}
+                <div className="w-full h-full overflow-hidden">
+                  <Link href={item.href} className="block w-full h-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
+                </div>
+                {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
                   <button
                     type="button"
                     aria-label="Add to wishlist"
@@ -816,21 +802,26 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                       e.preventDefault();
                       e.stopPropagation();
                     }}
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 border border-[#8ce3d7] text-[#00a896] hover:bg-[#e6faf7] flex items-center justify-center shadow-xs transition-colors cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
                   >
-                    <Heart className="w-3.5 h-3.5 text-[#00a896]" />
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Add to cart"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </button>
                 </div>
-
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-center"
-                />
-              </Link>
+              </div>
 
               {/* Text info block */}
-              <div className="p-3 pt-2.5 bg-white flex flex-col justify-between flex-1">
+              <div className="p-3 pt-4.5 bg-white flex flex-col justify-between flex-1">
                 <div>
                   <h4 className="text-[12px] sm:text-[13px] font-bold tracking-wider text-gray-900 uppercase block mb-0.5">
                     {item.brand}
@@ -1232,14 +1223,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 1 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A"]} alt="Slim Fit Raw Denim" className="w-full h-full object-cover object-top" />
@@ -1259,14 +1258,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 2 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ"]} alt="Tailored Relaxed Trousers" className="w-full h-full object-cover object-top" />
@@ -1286,14 +1293,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 3 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="Dark Classic Jean" className="w-full h-full object-cover object-top" />
@@ -1313,14 +1328,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 4 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="Tapered Slim Pants" className="w-full h-full object-cover object-top" />
@@ -1340,14 +1363,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 5 (Scrollable extra) */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ"]} alt="Selvedge Raw Indigo" className="w-full h-full object-cover object-top" />
@@ -1399,14 +1430,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 5 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="Cotton Blend Denim" className="w-full h-full object-cover object-top" />
@@ -1426,14 +1465,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 6 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="Pleated Straight Trouser" className="w-full h-full object-cover object-top" />
@@ -1453,14 +1500,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 7 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="Classic Straight Denim" className="w-full h-full object-cover object-top" />
@@ -1480,14 +1535,22 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           {/* Product 8 */}
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
-              <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
+              <div className="w-full aspect-[3/4] relative mb-3.5 bg-stone-100 rounded-[4px] group">
                 <HangTag text="Just In" />
-                <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
-                  <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
+                <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+                  <Link
+                    href="/wishlist"
+                    aria-label="Add to wishlist"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
-                  <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-[#FF3F6C] flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
-                    <Heart className="w-3.5 h-3.5 text-[#00a896] hover:text-[#FF3F6C]" />
+                  <Link
+                    href="/cart"
+                    aria-label="Add to cart"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                 </div>
                 <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="Minimalist Chino Pant" className="w-full h-full object-cover object-top" />
@@ -1866,11 +1929,29 @@ Shop Brand
 </section>
 <section data-purpose="fresh-finds" className="relative w-full py-10 px-4 sm:px-6 lg:px-8 border-y border-[#e5e7eb] bg-[#F5F5F5]" style={{ backgroundColor: "#F5F5F5", width: "100%", marginLeft: 0, marginRight: 0 }}><div className="max-w-[1440px] mx-auto"><div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 text-center">Fresh Finds</h2><p className="text-sm text-gray-500 mt-1 mb-8">Based On Your Recent Activity</p></div><div className="relative group/carousel"><button aria-label="Previous Fresh Finds" className="absolute left-1 top-1/2 -translate-y-1/2 z-20 w-8 sm:w-9 h-14 bg-white/95 hover:bg-white text-gray-500 hover:text-black rounded-r-md border border-stone-200 border-l-0 shadow-sm flex items-center justify-center transition-all cursor-pointer"><i className="fa-solid fa-chevron-left text-xs text-gray-600"></i></button><button aria-label="Next Fresh Finds" className="absolute right-1 top-1/2 -translate-y-1/2 z-20 w-8 sm:w-9 h-14 bg-white/95 hover:bg-white text-gray-500 hover:text-black rounded-l-md border border-stone-200 border-r-0 shadow-sm flex items-center justify-center transition-all cursor-pointer"><i className="fa-solid fa-chevron-right text-xs text-gray-600"></i></button><div className="overflow-x-auto hide-scrollbar flex gap-4 pb-4 px-2 items-stretch"><div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuDH0AuHS2bHWWS9mhrM_sXLBwOzO_AnJBD739DqEPpu2XWDnpqjNn8M2YNJ1vTuka8DSRLQPLiUkKU2gPNaLHJzKenNc00010Olk1C1yT9KLEABPCGKwOecodeKL2gZ_FsrrqQUFxSdkQ6i6ri8oI9Gc8k3JlsJYxPwaYhzlly4VyUlopNBvgPLPZlTTAjsxm7-xUOaggSBM2QLWl1Knm5N6z8j99jrlDQazgFDw"]} alt="RANGMANCH Off-White Embroidered Festive Ethnic Set" className="w-full h-full object-cover object-center" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuDH0AuHS2bHWWS9mhrM_sXLBwOzO_AnJBD739DqEPpu2XWDnpqjNn8M2YNJ1vTuka8DSRLQPLiUkKU2gPNaLHJzKenNc00010Olk1C1yT9KLEABPCGKwOecodeKL2gZ_FsrrqQUFxSdkQ6i6ri8oI9Gc8k3JlsJYxPwaYhzlly4VyUlopNBvgPLPZlTTAjsxm7-xUOaggSBM2QLWl1Knm5N6z8j99jrlDQazgFDw"]} alt="RANGMANCH Off-White Embroidered Festive Ethnic Set" className="w-full h-full object-cover object-center" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">RANGMANCH</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">Off-White Embroidered Festive Ethni...</p>
@@ -1887,11 +1968,29 @@ Shop Brand
 
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="AKKRITI Olive Embroidered Peplum Top" className="w-full h-full object-cover object-top" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="AKKRITI Olive Embroidered Peplum Top" className="w-full h-full object-cover object-top" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">AKKRITI</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">Olive Embroidered Peplum Top &amp; Pala...</p>
@@ -1908,11 +2007,29 @@ Shop Brand
 
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA"]} alt="AKKRITI Red Brocade Choli" className="w-full h-full object-cover object-top" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA"]} alt="AKKRITI Red Brocade Choli" className="w-full h-full object-cover object-top" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">AKKRITI</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">Red Brocade Choli, Palazzo &amp; Shrug...</p>
@@ -1929,11 +2046,29 @@ Shop Brand
 
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q"]} alt="AKKRITI Green Embroidered Cropped Top" className="w-full h-full object-cover object-top" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q"]} alt="AKKRITI Green Embroidered Cropped Top" className="w-full h-full object-cover object-top" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">AKKRITI</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">Green Embroidered Cropped Top...</p>
@@ -1950,11 +2085,29 @@ Shop Brand
 
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI White Embroidered Cotton Top" className="w-full h-full object-cover object-top" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI White Embroidered Cotton Top" className="w-full h-full object-cover object-top" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">AKKRITI</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">White Embroidered Cotton Top...</p>
@@ -1971,11 +2124,29 @@ Shop Brand
 
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
-    <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
+    <div className="w-full aspect-[3/4] relative bg-stone-100 mb-3.5 rounded-[4px] group">
       <HangTag text="Just In" />
-      
-      <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI Wine Sleeveless Festive Kurti" className="w-full h-full object-cover object-top" />
-    <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
+      <div className="w-full h-full overflow-hidden rounded-[4px]">
+        <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI Wine Sleeveless Festive Kurti" className="w-full h-full object-cover object-top" />
+      </div>
+      {/* Floating Wishlist & Cart buttons on bottom-right of image matching wireframe */}
+      <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
+        <Link
+          href="/wishlist"
+          aria-label="Add to wishlist"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+        <Link
+          href="/cart"
+          aria-label="Add to cart"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+        </Link>
+      </div>
+    </div>
     <div className="px-1">
       <h4 className="text-xs font-bold tracking-wider text-gray-900 uppercase block mb-1 font-sans">AKKRITI</h4>
       <p className="text-xs text-gray-600 truncate leading-snug font-normal">Wine Sleeveless Festive Kurti...</p>
@@ -2018,7 +2189,119 @@ Shop Brand
           </svg>
         </div>
         <span id="label-women" className="text-xs sm:text-sm font-extrabold tracking-widest text-stone-500 transition-colors uppercase">WOMEN</span>
-      </button></div><div className="w-full border-t border-[#f2eded] pt-8"><div id="gender-subnav-men" className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pb-8 text-xs sm:text-sm font-bold tracking-wider uppercase select-none"><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-black border-b-2 border-black pb-1.5 transition-colors font-extrabold cursor-pointer"><Sparkles className="w-3.5 h-3.5 inline mr-1 text-amber-500" />CASUAL WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><Crown className="w-3.5 h-3.5 inline mr-1 text-rose-500" />ETHNIC WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><Zap className="w-3.5 h-3.5 inline mr-1 text-teal-600" />ATHLEISURE</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><ShoppingBag className="w-3.5 h-3.5 inline mr-1 text-indigo-500" />ACCESSORIES</button></div><div id="gender-subnav-women" className="hidden flex-wrap items-center justify-center gap-6 sm:gap-10 pb-8 text-xs sm:text-sm font-bold tracking-wider uppercase select-none"><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-black border-b-2 border-black pb-1.5 transition-colors font-extrabold cursor-pointer">WESTERN WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ETHNIC &amp; FUSION WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ATHLEISURE</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">LOUNGEWEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">INTIMATE WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ACCESSORIES</button></div><div id="products-grid-men" className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-2 md:gap-2.5 mb-8"><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q" alt="Double Dyed Crew Tee" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 z-10"><span className="w-3.5 h-3.5 rounded-full bg-stone-200 border border-white"></span><span className="w-3.5 h-3.5 rounded-full bg-stone-700 border border-white"></span><span className="text-[10px] font-bold text-stone-800 bg-white/90 px-1 rounded">+17</span></div><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-1">Double Dyed Crew Tee - Regular Fit</h4><p className="text-xs text-gray-500 line-clamp-1 mb-2">Must Have Essential Tee With Super Soft...</p><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 199</span><span className="text-xs text-gray-400 line-through">₹ 699</span><span className="text-[11px] font-bold text-[#c8002e]">(71% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuANloF4NtMQvzqWT5Ncv7nGp3w3jhqgnvCuYWqCEA4DYpGO8vZ6f4vqUbsFMKiNqTsFKy_hsHt-6V3_qRaNbOd-xfQRmXUMcVAQRIQIZ_C4b2t3OStPmZdYkng9Ob_lJVNCn8suHzr99xvm2CKo844ChaTB17SsRJyqLj78sTelrU7Q5bJthad4mO9nm6oBLCuh6lUgBsK4LzQws1GTrdVFqkgtT-UTiPjhLUNhOg" alt="All Day Pullover Sweater" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">All Day Pullover Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 899</span><span className="text-xs text-gray-400 line-through">₹ 2,499</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEuCQxpxvusKz890AbuL7VS2wRL0WrykcgKV_O3LpHRLVKLvvT8qX8luesJC5vW_JK00S5Ys1CBh_jY424o4Yl9iwA_QDJBcw018xj4VNeHnQvouUj82LucwlB4naQIGpxH0XTBBgoQ2BDyTor5zCB_3BNJLxzR6oDdCsQYegCjOilZhy-V0Id8acry8D_AkM7X-VS2Te5qC1NPh-cmjtQk4IVOuD-KKHU0e9e0Q" alt="Hand Knit Jersey Smart Striped Sweater" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Hand Knit Jersey Smart Striped Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 999</span><span className="text-xs text-gray-400 line-through">₹ 2,799</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiD3YdHvQrf7UIyLCoe-qlHHvPTO-d7wKaOBt25_5HfdXSS3KGWcXqkuIkrznf1WyKEARmPf0TfAlKBFsBEzLK50x7k90KXu86wv6cOYDqzcSCITFEuTrJ49183OOdwFgBkaExCIvDAuLozMdra_TArIw-lCvDUaQ7llVDyCl8sLtQNjzdFaB7IwoFUTMZtSHxN6nfkBjP9GGAEstcesN_feJRP4zI0eDSS6S-Hg" alt="Oversize Winter Edit Striped Sweater" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Oversize Winter Edit Striped Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 999</span><span className="text-xs text-gray-400 line-through">₹ 2,799</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div></div><div id="products-grid-women" className="hidden grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-2 md:gap-2.5 mb-8"><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwUy1fIOkDK6u2pWKdsiBXn8gjCsw5MhRYfssCccVA5SSIQeA6D4NOh-3Syt67FFtkYJVWr1A3AVmRp2orEY5W_4E2urr5Fv_r3sL3AGPuPRlO4AVwcIGgE3Xq2vPFdawQoQ-vi_BxZk-kOoAZTHTEcf-JfGa8LsaxwOgH2sDLh3n_Fo47w2ni6PZaBcSdaC2xP_vEcLG8Vxl5TpTLYZyLtS30Zb2dGVJ2c6Fy7g" alt="Cotton Flared Dress" className="w-full h-full object-cover object-top" /><span className="absolute top-3 left-3 bg-white text-black text-[10px] font-bold px-2 py-0.5 tracking-wider uppercase border border-stone-200 shadow-xs">SELLING FAST</span><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Cotton Flared Dress</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,299</span><span className="text-xs text-gray-400 line-through">₹ 3,499</span><span className="text-[11px] font-bold text-[#c8002e]">(63% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA" alt="Embroidered Flared Strappy Dress" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Embroidered Flared Strappy Dress</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,499</span><span className="text-xs text-gray-400 line-through">₹ 3,999</span><span className="text-[11px] font-bold text-[#c8002e]">(62% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w" alt="Structured Lace Palazzo" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Structured Lace Palazzo</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 799</span><span className="text-xs text-gray-400 line-through">₹ 1,999</span><span className="text-[11px] font-bold text-[#c8002e]">(60% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 overflow-hidden mb-2 rounded-[4px]"><img src="https://lh3.googleusercontent.com/aida/AEtjO1Xzf1kNzq-kvkhgpHMYny2notAK7zr9TdLCjPpzWdf6aI2g8zyA8jAV_0r2Yn-5vTzwoWPMEyzg5vzST7UPYHnjy2abpAz0jJvdMh39Meid8SUeKPI36zCMvME0Fpi6Oqwt5ANaL-LE4_xrjtRW85uHE1hfctzLsXL5u-MXTx5dUyX0geU76FmfSJ_r7FKR8mZ1JWZx_FIKDYUBFcQGjZmw0txP1s1v2pEhX2Xbrs0" alt="Woven Solid Pant" className="w-full h-full object-cover object-top" /><Link href="/wishlist" className="absolute top-3 right-3 text-stone-700 hover:text-[#c8002e] transition-colors"><Heart className="w-4 h-4 text-stone-700 hover:text-[#c8002e] transition-colors" /></Link><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Woven Solid Pant</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,499</span><span className="text-xs text-gray-400 line-through">₹ 3,999</span><span className="text-[11px] font-bold text-[#c8002e]">(62% OFF)</span></div></div></div></div><div className="flex items-center justify-between pt-4 border-t border-stone-200"><div className="flex items-center gap-3"><div className="flex items-center gap-1.5 text-stone-800"><button type="button" className="w-8 h-8 rounded-md border border-stone-200 bg-stone-50 flex items-center justify-center text-black hover:bg-stone-100 transition-colors cursor-pointer shadow-2xs" title="2-Column View"><Columns2 className="w-4 h-4" /></button><button type="button" className="w-8 h-8 rounded-md border border-stone-200 bg-white flex items-center justify-center text-stone-400 hover:text-black hover:bg-stone-50 transition-colors cursor-pointer shadow-2xs" title="Grid View"><LayoutGrid className="w-4 h-4" /></button></div><div className="w-36 sm:w-48 h-1 bg-stone-200 rounded-full overflow-hidden"><div className="h-full bg-stone-800 w-14 rounded-full"></div></div></div><Link href="/category" className="px-7 py-2.5 bg-[#c8002e] hover:bg-black text-white font-black text-xs tracking-wider uppercase transition-colors shadow-sm inline-flex items-center gap-1.5 rounded-[4px]">VIEW ALL <ArrowRight className="w-3.5 h-3.5" /></Link></div></div></div></section>
+      </button></div><div className="w-full border-t border-[#f2eded] pt-8"><div id="gender-subnav-men" className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pb-8 text-xs sm:text-sm font-bold tracking-wider uppercase select-none"><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-black border-b-2 border-black pb-1.5 transition-colors font-extrabold cursor-pointer"><Sparkles className="w-3.5 h-3.5 inline mr-1 text-amber-500" />CASUAL WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><Crown className="w-3.5 h-3.5 inline mr-1 text-rose-500" />ETHNIC WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><Zap className="w-3.5 h-3.5 inline mr-1 text-teal-600" />ATHLEISURE</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer"><ShoppingBag className="w-3.5 h-3.5 inline mr-1 text-indigo-500" />ACCESSORIES</button></div><div id="gender-subnav-women" className="hidden flex-wrap items-center justify-center gap-6 sm:gap-10 pb-8 text-xs sm:text-sm font-bold tracking-wider uppercase select-none"><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-black border-b-2 border-black pb-1.5 transition-colors font-extrabold cursor-pointer">WESTERN WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ETHNIC &amp; FUSION WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ATHLEISURE</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">LOUNGEWEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">INTIMATE WEAR</button><button type="button" onClick={(e) => handleSubTab(e)} className="subtab-item text-gray-400 hover:text-black pb-1.5 transition-colors cursor-pointer">ACCESSORIES</button></div><div id="products-grid-men" className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-2 md:gap-2.5 mb-8"><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q" alt="Double Dyed Crew Tee" className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 z-10"><span className="w-3.5 h-3.5 rounded-full bg-stone-200 border border-white"></span><span className="w-3.5 h-3.5 rounded-full bg-stone-700 border border-white"></span><span className="text-[10px] font-bold text-stone-800 bg-white/90 px-1 rounded">+17</span>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-1">Double Dyed Crew Tee - Regular Fit</h4><p className="text-xs text-gray-500 line-clamp-1 mb-2">Must Have Essential Tee With Super Soft...</p><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 199</span><span className="text-xs text-gray-400 line-through">₹ 699</span><span className="text-[11px] font-bold text-[#c8002e]">(71% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuANloF4NtMQvzqWT5Ncv7nGp3w3jhqgnvCuYWqCEA4DYpGO8vZ6f4vqUbsFMKiNqTsFKy_hsHt-6V3_qRaNbOd-xfQRmXUMcVAQRIQIZ_C4b2t3OStPmZdYkng9Ob_lJVNCn8suHzr99xvm2CKo844ChaTB17SsRJyqLj78sTelrU7Q5bJthad4mO9nm6oBLCuh6lUgBsK4LzQws1GTrdVFqkgtT-UTiPjhLUNhOg" alt="All Day Pullover Sweater" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">All Day Pullover Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 899</span><span className="text-xs text-gray-400 line-through">₹ 2,499</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEuCQxpxvusKz890AbuL7VS2wRL0WrykcgKV_O3LpHRLVKLvvT8qX8luesJC5vW_JK00S5Ys1CBh_jY424o4Yl9iwA_QDJBcw018xj4VNeHnQvouUj82LucwlB4naQIGpxH0XTBBgoQ2BDyTor5zCB_3BNJLxzR6oDdCsQYegCjOilZhy-V0Id8acry8D_AkM7X-VS2Te5qC1NPh-cmjtQk4IVOuD-KKHU0e9e0Q" alt="Hand Knit Jersey Smart Striped Sweater" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Hand Knit Jersey Smart Striped Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 999</span><span className="text-xs text-gray-400 line-through">₹ 2,799</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiD3YdHvQrf7UIyLCoe-qlHHvPTO-d7wKaOBt25_5HfdXSS3KGWcXqkuIkrznf1WyKEARmPf0TfAlKBFsBEzLK50x7k90KXu86wv6cOYDqzcSCITFEuTrJ49183OOdwFgBkaExCIvDAuLozMdra_TArIw-lCvDUaQ7llVDyCl8sLtQNjzdFaB7IwoFUTMZtSHxN6nfkBjP9GGAEstcesN_feJRP4zI0eDSS6S-Hg" alt="Oversize Winter Edit Striped Sweater" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link><Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white hover:bg-stone-100 text-stone-900 border-t border-stone-200 text-xs font-bold py-2.5 flex items-center justify-center gap-1.5 shadow-md uppercase tracking-wider"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Oversize Winter Edit Striped Sweater</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 999</span><span className="text-xs text-gray-400 line-through">₹ 2,799</span><span className="text-[11px] font-bold text-[#c8002e]">(64% OFF)</span></div></div></div></div><div id="products-grid-women" className="hidden grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-2 md:gap-2.5 mb-8"><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwUy1fIOkDK6u2pWKdsiBXn8gjCsw5MhRYfssCccVA5SSIQeA6D4NOh-3Syt67FFtkYJVWr1A3AVmRp2orEY5W_4E2urr5Fv_r3sL3AGPuPRlO4AVwcIGgE3Xq2vPFdawQoQ-vi_BxZk-kOoAZTHTEcf-JfGa8LsaxwOgH2sDLh3n_Fo47w2ni6PZaBcSdaC2xP_vEcLG8Vxl5TpTLYZyLtS30Zb2dGVJ2c6Fy7g" alt="Cotton Flared Dress" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Cotton Flared Dress</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,299</span><span className="text-xs text-gray-400 line-through">₹ 3,499</span><span className="text-[11px] font-bold text-[#c8002e]">(63% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA" alt="Embroidered Flared Strappy Dress" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Embroidered Flared Strappy Dress</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,499</span><span className="text-xs text-gray-400 line-through">₹ 3,999</span><span className="text-[11px] font-bold text-[#c8002e]">(62% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w" alt="Structured Lace Palazzo" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Structured Lace Palazzo</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 799</span><span className="text-xs text-gray-400 line-through">₹ 1,999</span><span className="text-[11px] font-bold text-[#c8002e]">(60% OFF)</span></div></div></div><div className="bg-white flex flex-col justify-between group product-card rounded-[6px] border border-stone-200/70 p-2 shadow-xs"><div className="relative aspect-[3/4] bg-stone-100 mb-3.5 rounded-[4px]">
+              <div className="w-full h-full overflow-hidden rounded-[4px]">
+                <img src="https://lh3.googleusercontent.com/aida/AEtjO1Xzf1kNzq-kvkhgpHMYny2notAK7zr9TdLCjPpzWdf6aI2g8zyA8jAV_0r2Yn-5vTzwoWPMEyzg5vzST7UPYHnjy2abpAz0jJvdMh39Meid8SUeKPI36zCMvME0Fpi6Oqwt5ANaL-LE4_xrjtRW85uHE1hfctzLsXL5u-MXTx5dUyX0geU76FmfSJ_r7FKR8mZ1JWZx_FIKDYUBFcQGjZmw0txP1s1v2pEhX2Xbrs0" alt="Woven Solid Pant" className="w-full h-full object-cover object-top" />
+              </div>
+              <Link href="/product/p1" className="absolute bottom-2.5 right-2.5 bg-[#c8002e] hover:bg-black text-white text-[9px] font-bold px-2.5 py-1 tracking-wider uppercase transition-colors shadow-sm rounded-[3px]">QUICK SHOP</Link>
+              {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+              <div className="absolute right-2 -bottom-3.5 z-20 flex items-center gap-1.5">
+                <Link href="/wishlist" aria-label="Add to wishlist" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+                <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110">
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
+                </Link>
+              </div>
+            </div><div><h4 className="text-sm font-bold text-gray-900 leading-snug mb-2">Woven Solid Pant</h4><div className="flex items-baseline gap-1.5 flex-wrap mt-1"><span className="text-sm font-bold text-gray-900">₹ 1,499</span><span className="text-xs text-gray-400 line-through">₹ 3,999</span><span className="text-[11px] font-bold text-[#c8002e]">(62% OFF)</span></div></div></div></div><div className="flex items-center justify-between pt-4 border-t border-stone-200"><div className="flex items-center gap-3"><div className="flex items-center gap-1.5 text-stone-800"><button type="button" className="w-8 h-8 rounded-md border border-stone-200 bg-stone-50 flex items-center justify-center text-black hover:bg-stone-100 transition-colors cursor-pointer shadow-2xs" title="2-Column View"><Columns2 className="w-4 h-4" /></button><button type="button" className="w-8 h-8 rounded-md border border-stone-200 bg-white flex items-center justify-center text-stone-400 hover:text-black hover:bg-stone-50 transition-colors cursor-pointer shadow-2xs" title="Grid View"><LayoutGrid className="w-4 h-4" /></button></div><div className="w-36 sm:w-48 h-1 bg-stone-200 rounded-full overflow-hidden"><div className="h-full bg-stone-800 w-14 rounded-full"></div></div></div><Link href="/category" className="px-7 py-2.5 bg-[#c8002e] hover:bg-black text-white font-black text-xs tracking-wider uppercase transition-colors shadow-sm inline-flex items-center gap-1.5 rounded-[4px]">VIEW ALL <ArrowRight className="w-3.5 h-3.5" /></Link></div></div></div></section>
 {/* END: 8. BestSelling */}
 {/* BEGIN: 9. EXPLORE MORE DEALS */}
 <section data-purpose="explore-more-deals" className="w-full px-2 sm:px-4 lg:px-6">
