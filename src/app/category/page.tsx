@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { HangTag } from '@/components/ui/HangTag';
 import {
   ChevronRight,
   ChevronDown,
@@ -891,11 +892,7 @@ function ProductCard({
       data-purpose="product-card"
     >
       <div className="relative bg-white overflow-hidden aspect-[3/4.2] mb-3">
-        {product.tag && (
-          <span className="absolute top-0 left-0 bg-[#14CDA8] text-white text-[11px] font-semibold px-2.5 py-1 z-10">
-            {product.tag}
-          </span>
-        )}
+        {product.tag && <HangTag text={product.tag} />}
 
         {/* Action buttons at top right matching Stitch */}
         <div className="absolute top-2 right-2 flex flex-col gap-1.5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">

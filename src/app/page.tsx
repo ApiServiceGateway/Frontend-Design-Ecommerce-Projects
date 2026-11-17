@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ProductHoverCarousel } from '@/components/ui/ProductHoverCarousel';
+import { HangTag } from '@/components/ui/HangTag';
 import { Play, ArrowRight, Sparkles, Snowflake, Gift, Zap, ShieldCheck, Star, ShoppingBag, Eye, Heart, Compass, Check, ChevronLeft, ChevronRight, Lock, Columns2, LayoutGrid, Crown } from 'lucide-react';
 
 const heroSlides = [
@@ -1232,13 +1233,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1265,13 +1260,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1298,13 +1287,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1331,13 +1314,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1364,13 +1341,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1429,13 +1400,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1462,13 +1427,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1495,13 +1454,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1528,13 +1481,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
           <div className="product-card bg-white border border-stone-200 shadow-xs hover:shadow-md transition-shadow overflow-hidden p-2.5 sm:p-3 flex flex-col justify-between rounded-[6px] shrink-0 w-[220px] sm:w-[235px] md:w-[245px] lg:w-[250px]">
             <div>
               <div className="w-full aspect-[3/4] overflow-hidden relative mb-2.5 bg-stone-100 rounded-[4px] group">
-                <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-                  <div className="w-0.5 h-3 bg-teal-600 mb-[-2px]"></div>
-                  <div className="bg-amber-400 text-stone-900 w-5 sm:w-6 pt-1 pb-2 rounded-b-[2px] flex flex-col items-center shadow-xs">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white mb-1 shadow-inner"></div>
-                    <span className="font-bold text-[9px] sm:text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-                  </div>
-                </div>
+                <HangTag text="Just In" />
                 <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5">
                   <Link href="/cart" aria-label="Add to cart" className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-teal-600 hover:text-black flex items-center justify-center shadow-xs border border-stone-200/60 transition-colors">
                     <ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" />
@@ -1920,13 +1867,7 @@ Shop Brand
 <section data-purpose="fresh-finds" className="relative w-full py-10 px-4 sm:px-6 lg:px-8 border-y border-[#e5e7eb] bg-[#F5F5F5]" style={{ backgroundColor: "#F5F5F5", width: "100%", marginLeft: 0, marginRight: 0 }}><div className="max-w-[1440px] mx-auto"><div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 text-center">Fresh Finds</h2><p className="text-sm text-gray-500 mt-1 mb-8">Based On Your Recent Activity</p></div><div className="relative group/carousel"><button aria-label="Previous Fresh Finds" className="absolute left-1 top-1/2 -translate-y-1/2 z-20 w-8 sm:w-9 h-14 bg-white/95 hover:bg-white text-gray-500 hover:text-black rounded-r-md border border-stone-200 border-l-0 shadow-sm flex items-center justify-center transition-all cursor-pointer"><i className="fa-solid fa-chevron-left text-xs text-gray-600"></i></button><button aria-label="Next Fresh Finds" className="absolute right-1 top-1/2 -translate-y-1/2 z-20 w-8 sm:w-9 h-14 bg-white/95 hover:bg-white text-gray-500 hover:text-black rounded-l-md border border-stone-200 border-r-0 shadow-sm flex items-center justify-center transition-all cursor-pointer"><i className="fa-solid fa-chevron-right text-xs text-gray-600"></i></button><div className="overflow-x-auto hide-scrollbar flex gap-4 pb-4 px-2 items-stretch"><div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuDH0AuHS2bHWWS9mhrM_sXLBwOzO_AnJBD739DqEPpu2XWDnpqjNn8M2YNJ1vTuka8DSRLQPLiUkKU2gPNaLHJzKenNc00010Olk1C1yT9KLEABPCGKwOecodeKL2gZ_FsrrqQUFxSdkQ6i6ri8oI9Gc8k3JlsJYxPwaYhzlly4VyUlopNBvgPLPZlTTAjsxm7-xUOaggSBM2QLWl1Knm5N6z8j99jrlDQazgFDw"]} alt="RANGMANCH Off-White Embroidered Festive Ethnic Set" className="w-full h-full object-cover object-center" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
@@ -1947,13 +1888,7 @@ Shop Brand
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuAu4XcuS8foDakvyLzUR-KAY6KJ_IEV5zxNlp2Z0La2yKDPwKdh4xo2IDpVp9xjD6lwc4NlVf4_3_pkN9cx68_TwkFNoqPGPMLwnEmcAQFROiaj3Eao7PCQG5XQU7waD6qtYau1TeDL3SGsu7RCRSHie5BglSzxw3z97Egk17u-o9fn4QsfslXnDy0JX7_dIdNgaBUIMgtxx0zTtDRjiMjXJen_sO4MuhCj78bw5A", "https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g"]} alt="AKKRITI Olive Embroidered Peplum Top" className="w-full h-full object-cover object-top" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
@@ -1974,13 +1909,7 @@ Shop Brand
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuDq5hWZd7gcdkKQPebnbe8HjDg0NIt_Iqg1tANSrOK9Ox3MWofbYeCuHoYezH1vDbgR9iwDhRq86BYkgIRotFXP_A775omml-fzx2AmpPwbZGTBKcCRXrGP0cjSiQWxdeG3MLKUrYTaZxd2ojJfW7qlkDpa7eFLgC1kvwNjJ7AFrWyLeJts0LqEESMPq8jKdOYJ-ABw-FyRLX3AwvnBPU_NhirWYxwfR83qcHAqrA", "https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w", "https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA"]} alt="AKKRITI Red Brocade Choli" className="w-full h-full object-cover object-top" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
@@ -2001,13 +1930,7 @@ Shop Brand
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q"]} alt="AKKRITI Green Embroidered Cropped Top" className="w-full h-full object-cover object-top" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
@@ -2028,13 +1951,7 @@ Shop Brand
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuAki53rTZlrseBrx8szPpZ17MzEKGS4QE1_Nh1rBnQyqlGXmgekfusA8Aiv1fJxmeKuIEzpy_DGSSRMMsdFzQlDwkyhTngYvxsYpRfg0cu_BrWQdPiz4EyzaxfXn17Ul9LMjbPR1BNe7XDhwdplEzr97gjrvMOn8luAOSYKbjHIPmrMOqDjsSr5SHl7hBzFdWPGQhWNignCeaKygD4zGuokLXChn3G35EY2mM6Mjg", "https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI White Embroidered Cotton Top" className="w-full h-full object-cover object-top" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
@@ -2055,13 +1972,7 @@ Shop Brand
 <div className="product-card flex-none w-[230px] sm:w-[245px] md:w-[250px] lg:w-[calc((100%-4*1rem)/5.3)] bg-white border border-stone-200 shadow-sm overflow-hidden flex flex-col p-2.5 sm:p-3 relative shrink-0 justify-between rounded-[6px]">
   <div>
     <div className="w-full aspect-[3/4] overflow-hidden relative bg-stone-100 mb-3 rounded-[4px] group">
-      <div className="absolute -top-1 left-2.5 z-20 flex flex-col items-center pointer-events-none drop-shadow-sm">
-        <div className="w-0.5 h-3 bg-teal-600 shadow-xs mb-[-2px]"></div>
-        <div className="bg-amber-400 text-stone-900 w-6 pt-1 pb-2.5 rounded-b-[2px] flex flex-col items-center shadow-xs">
-          <div className="w-1.5 h-1.5 rounded-full bg-white mb-1.5 mt-0.5 shadow-inner"></div>
-          <span className="font-bold text-[10px] tracking-tight [writing-mode:vertical-rl] rotate-180 select-none italic text-stone-900">Just In</span>
-        </div>
-      </div>
+      <HangTag text="Just In" />
       
       <ProductHoverCarousel images={["https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q", "https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ", "https://lh3.googleusercontent.com/aida-public/AB6AXuBEZWg_Qcw-XrvHDafNBvoqtwZzN9Zj2Axao8bXj_8oykAGO9lUo6LwB_F2Rgs-q9lfYrzwqI1ip_c87XMcTqh98ls2Y1zaHXvLke94RFLLrym5vwqfntMB0bExAZCFXW4hJY0wZHxgXXiOy_MhOrMjUmdtHXJxyiW01veWxVyVBD2yrQj1o4098-Q3D2onxbiD2giCuBI5o2tak50C1zZhefvNekUmZOVOweCs_Q"]} alt="AKKRITI Wine Sleeveless Festive Kurti" className="w-full h-full object-cover object-top" />
     <Link href="/cart" className="absolute bottom-0 inset-x-0 w-full z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black/80 hover:bg-black text-white text-xs font-semibold py-2.5 flex items-center justify-center gap-1.5 shadow-md"><ShoppingBag className="w-3.5 h-3.5 text-[#00a896]" /><span className="">Add to Cart</span></Link></div>
