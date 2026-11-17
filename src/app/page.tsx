@@ -347,6 +347,11 @@ const justInProducts = [
     discountPercent: 48,
     hasRibbon: true,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDw8JCu0-chVwXKxtYrdaXqUyVVQaqWrkB9oLnLFvY9UZNW2_5FkOC4YhX48su-Lg6aPFTTOnxYOf6nVTECAsvYhquhquDOgysVgZpP4mNNQcJGiQRJQk7QbQoJ_iE1cD-D-Xbt_u0VoC3cUBGHW3Cjuz_jV0l0yHS_4fsJ9IGEKjJSn6GBsFTZLIksQ3te47Rh3pgG7BOg8JVWp2-NM3vl8SUx29Z-pwAvSySMjQ',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDw8JCu0-chVwXKxtYrdaXqUyVVQaqWrkB9oLnLFvY9UZNW2_5FkOC4YhX48su-Lg6aPFTTOnxYOf6nVTECAsvYhquhquDOgysVgZpP4mNNQcJGiQRJQk7QbQoJ_iE1cD-D-Xbt_u0VoC3cUBGHW3Cjuz_jV0l0yHS_4fsJ9IGEKjJSn6GBsFTZLIksQ3te47Rh3pgG7BOg8JVWp2-NM3vl8SUx29Z-pwAvSySMjQ',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAMu7kMwS7W7CPFi9y_BUOaQWTP4MyQaShRYrr2IMJm787Rn6vyhsbvPizlK_R9E0PsxItR7SXTXg-LFHIhmZG5rK0qaL1tci_KRXrcEfp70Bitt-UJz18Wl6SO-yi8uE29htLTslpFxJ79RfzDKu5BTk4eV-4AR7YrzdOOQ54ya58D3_3CiINQSm4T49xY39d3fKZiH8Uq4K615CWmUb4Q_bsTdcvkVmnoaiZsAA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCQhhyqWdYRh8qpTXZyl_KelJJfeuQsseZVT3JQiAzZtn82V_c2SafVQjQA5XP2lTuqPZaiSuEa8YYAaBzfk9dHPWbftu3bAqeWEGgk3lG5-3VuhmI5ZHylxVAhTP_iEZS0z9J47xV9eQDbx7yJt6xAU3j3Ro5i6BnaaLyOchB2QEXHfo7ef2MjrWatPklruen8T__jq5PUr2It9YPS6yYBliml06uYsccaia_juA',
+    ],
     href: '/product/2',
   },
   {
@@ -358,6 +363,11 @@ const justInProducts = [
     discountPercent: 10,
     hasRibbon: false,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEQlYMkmLBIe16HU-eGR-1Aq8hZD44GrBJaLxqyY587yC6ey9XJ4GtZvJLZwoCZZCytbi4eNQVHJB8mKZtaCS6q1oko2JCUtGgGbOONx_Tg2mRurzJPkPDvMwuDIFyWIM7p0UqLs6CK4F0QWT3PZXNVX7-UQF0Ilo4O4zwcZqEKPkWRvFP7NOOIo0ebj5zYamR4ikxk5SIJ7EPr0q-GtmnYmG-I7__q9Af7lwWFg',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAEQlYMkmLBIe16HU-eGR-1Aq8hZD44GrBJaLxqyY587yC6ey9XJ4GtZvJLZwoCZZCytbi4eNQVHJB8mKZtaCS6q1oko2JCUtGgGbOONx_Tg2mRurzJPkPDvMwuDIFyWIM7p0UqLs6CK4F0QWT3PZXNVX7-UQF0Ilo4O4zwcZqEKPkWRvFP7NOOIo0ebj5zYamR4ikxk5SIJ7EPr0q-GtmnYmG-I7__q9Af7lwWFg',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCD6z8Kqjf7ii_WUQvGJidL9hrL3o5C-9iwWE6MmVp-mlotFPIF7VvYgFNgR80qheYR0CGOmn8ar5rzPRoOOHPc0vbocB7_kE3hDOzpHe90wvqQVqr2v__LpDHjJdQQmP4ZUJrqeGKbL96MIzP59-siIV23_o7e5aaHaF6qkXI5a6cHj3HJhEQxIqfA0H9lEXynjnunAKgCIc5yeGZVt_LtDAtUtYYHq4Wh5BfC7g',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDp2gDVngD6ckLuNjjqVhgky_tBn1i70phJlMs1Og4_w7vyYW8b0fT8rsbyDNHOVJEoy1NxwaH27_I9-c9uK2m-EprAqqwIZVgUrzqtwke6qzWAkNl8Vn6Tt7dcmhdqn4zOGbNm59egCCmjuJjjdDzTAvU23nyOS7ZiH4ffR_IlX-ZdBT9mrV_ni4Se7LP4fOG_XvqsX5sLbzWfwdr_gAmiIxomi3kRm2JSuuEC6Q',
+    ],
     href: '/product/3',
   },
   {
@@ -369,6 +379,10 @@ const justInProducts = [
     discountPercent: 60,
     hasRibbon: false,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQhhyqWdYRh8qpTXZyl_KelJJfeuQsseZVT3JQiAzZtn82V_c2SafVQjQA5XP2lTuqPZaiSuEa8YYAaBzfk9dHPWbftu3bAqeWEGgk3lG5-3VuhmI5ZHylxVAhTP_iEZS0z9J47xV9eQDbx7yJt6xAU3j3Ro5i6BnaaLyOchB2QEXHfo7ef2MjrWatPklruen8T__jq5PUr2It9YPS6yYBliml06uYsccaia_juA',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCQhhyqWdYRh8qpTXZyl_KelJJfeuQsseZVT3JQiAzZtn82V_c2SafVQjQA5XP2lTuqPZaiSuEa8YYAaBzfk9dHPWbftu3bAqeWEGgk3lG5-3VuhmI5ZHylxVAhTP_iEZS0z9J47xV9eQDbx7yJt6xAU3j3Ro5i6BnaaLyOchB2QEXHfo7ef2MjrWatPklruen8T__jq5PUr2It9YPS6yYBliml06uYsccaia_juA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDChlIHKqRYkxJtpKdc2aKrrtkAbM-8IVJlMVzQych60bt6E1nfyq-aBZ01jTpsqPvM7Jo6qeUUGi2fiYUJjFT86FqPYuBrFeIxsJ1CA7lFfEHutZtIQkCzEUa8OIHNLMW6Lv-FLjcgZSbKdY3zacNZ_UsOjk3NOGmw6X9W1-4UUOTmXgK5XsbPiWSuK6Bus7qCdWNP-_EWrImyd81cjZX8oRl-hZO7PsYbESElxA',
+    ],
     href: '/product/4',
   },
   {
@@ -380,6 +394,10 @@ const justInProducts = [
     discountPercent: 35,
     hasRibbon: true,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDfAjn1pqNhyu6o0ODhdHAEvwGh_fhQUXGIWeDltdALENOlPxkgPhXUIJlZMCHREbSDq_kGcxVp1QnB4LnQZGaVQLcfbkGEPxRtCN4vc0MhL7fWFyvtBh2fqPomXW9ujKDWPFDROMOEw76eZnfxZJnrsT313-MGz9SgYxTpVHTzlK5GlseHV31jwxZseNN3zBQROVMo9trp08cn1kCL0hcxYg2fixoKFlADbMiHiQ',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuA0Yi8LMJrJjBQw6fbTB1SuTeHVwy7aaS36cLjL4U2fpcuTFyBcCIUoTbCNERAQ3ysJm50W1rE4jGFX3is2u72wLEdM0O3ecbimLsOvTQk5M5rCRr0boXsg8B5bPNImanFaFJ-ZUBNoS744rul9TJ0VOigvWMkwkHBesw5QysLfwdrFW0OrvrrwGm5GiyQUn_JdgoR-D59MyWqLiiKPOiYnkrCsp_zG4W5y2KAWBA',
+    ],
     href: '/product/5',
   },
   {
@@ -391,6 +409,10 @@ const justInProducts = [
     discountPercent: 33,
     hasRibbon: true,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuB99dwpq68H6bPiciXwJbg8dmsBb9ckLz9C6gof-cbpXjktk_ZioLvspE-f_DhDqo5jJLokmnuLqNM8FJet_N9X7ZhNRjKbsKQIqQ0GiKX52EgCEj28YmrHy09vwwKkMgZQbgO2KiriXB7eoPCWzSyiHsK7RuMcHc2e_6-_G7eHrjJ1t0ptI_5EL6TXR4_ViYzxwsxsSh1iKyKhH7DxZScFtJfPB_dE1oZCBJ7xHA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCo3KPazHsUx_yiKnPP2SeCjLRKgHwaE_4VTvgTWOZThAQwXy_-apumg3DK1iECPB9mFaBg8nQb-dkZg0LL8GLhzIYPHdoZfJHNCgfVyKP6FXvwEuMc_2YwRGgeGPzb4fC7D-eLlQz6MiH787-daaOPW-1lYoYhjFXzhfwKiWoGKeVYiaGnhWmGeHZfIEHDDC7u7CKbyFgfcwuYDmjBP-Ghw8chpyYCdQhEetFa7g',
+    ],
     href: '/product/6',
   },
   {
@@ -402,6 +424,10 @@ const justInProducts = [
     discountPercent: 46,
     hasRibbon: true,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCCD0ZB9JFLfkzvFC68HvU8tXMqxzQsEkoRqjazTITeT1DcEDQ80wWupTO3XfStG7IAjZ3iyUzRdgAIAdnXT8z4IVfwR2-b2ugtXZSMmjEt3fuypKDYjOAFXd62wgU25ruMRBDkmKKPQ5BLIWbxIptf5ujcXOO13QsUyeTUgMDumEEhXWUi7InCFL3WFeboEcp4Ulw96ADWD61vGMF6883nrAM1QozFBHOYJ261-Q',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBvfMkX98av_r6sFihXB_m69onYueL0GGjYFUH6h4txCjei5A7EmnaNpVjxkY7HZaVLL1D_jvfl-9_a0rE4HaW25e2f_6yT6acX3CHxOcJapgXN9_pHLRqLO9jf9Xkr_TNONvMBe0ArG0_A_P_0sr819K3nTdBB-3q4K9bdIcQwD5qIZXN_sYUHaeui19lKovYq8TdNEbHuUEJSZcF0BZ_Jp0hbQeZG9Z8ehzrsDigqsL3aI5dNj6o',
+    ],
     href: '/product/7',
   },
   {
@@ -413,6 +439,10 @@ const justInProducts = [
     discountPercent: 46,
     hasRibbon: true,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuATKEJFfrZfwPr8oQ4E1-Vvymoy-wQkWdvK35GZskSQGECzX6lfZIgCRKeyyrXp8KBpOPHMF0lpPgcgfqzZuSMxqPVwuKxT_tzx5T4-7sKWZYuNQU-7amTvoSHbpLToCo3OsgY90NOzMtbgNPnv-6eSPteZGQD59z77f0quxYpTmRrB-aPirJ5ZgTJbYKtniorBum27Vx3sVqTdZrJTyE6pTsdOey6b__TocaDns58nsONvhhBQG-w',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCZb1e2QnAmU66VBC0ij-2vvSvhFqWmpI7MeHdFlzX2LGaWkfrq5-y7RI-mP59DmHar9lxRxdt0U_tAJR7T1JSKISdg5gmqST0AKaKCZVgGIT3hdm-Z0DW27QDNyhdtdXmawSNQ3zRjS7Nw9PVWOoivwoaZxZfVeYbSLdxycqXdu76lNCRcso-f5OXXfzPtzApgZVn17d8ByB1rZqJlv8B1HGMs06kypwRZ9Qm287gEsBNxD9y3q4o',
+    ],
     href: '/product/8',
   },
 ];
@@ -776,24 +806,24 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
 
       {/* Right Horizontal Grid / Carousel of Products */}
       <div id="just-in-scroll-container" className="flex-1 overflow-x-auto hide-scrollbar scroll-smooth px-1">
-        <div className="flex flex-nowrap gap-4 pb-2 items-stretch">
+        <div className="flex flex-nowrap gap-4 pb-2 items-start">
           {justInProducts.map((item) => (
             <div
               key={item.id}
-              className="product-card flex-none w-[205px] sm:w-[220px] bg-white rounded-xl border border-gray-200/90 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group relative select-none"
+              className="product-card flex-none w-[205px] sm:w-[220px] bg-white rounded-xl border border-gray-200/90 shadow-xs hover:shadow-md transition-shadow flex flex-col group relative select-none"
             >
-              <div className="relative w-full aspect-[3/4.2] bg-stone-50">
+              <div className="relative w-full aspect-[3/4.2] bg-stone-50 rounded-t-xl">
                 {item.hasRibbon && <HangTag text="Just In" />}
-                <div className="w-full h-full overflow-hidden">
+                <div className="w-full h-full overflow-hidden rounded-t-xl">
                   <Link href={item.href} className="block w-full h-full">
-                    <img
-                      src={item.image}
+                    <ProductHoverCarousel
+                      images={item.images || [item.image]}
                       alt={item.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover object-center"
                     />
                   </Link>
                 </div>
-                {/* Floating Wishlist & Cart buttons on bottom-right of image */}
+                {/* Floating Wishlist & Cart buttons (No shadow, No border) */}
                 <div className="absolute right-2.5 -bottom-3.5 z-20 flex items-center gap-1.5">
                   <button
                     type="button"
@@ -802,7 +832,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                       e.preventDefault();
                       e.stopPropagation();
                     }}
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </button>
@@ -813,37 +843,25 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                       e.preventDefault();
                       e.stopPropagation();
                     }}
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </button>
                 </div>
               </div>
 
-              {/* Text info block */}
-              <div className="p-3 pt-4.5 bg-white flex flex-col justify-between flex-1">
-                <div>
-                  <h4 className="text-[12px] sm:text-[13px] font-bold tracking-wider text-gray-900 uppercase block mb-0.5">
-                    {item.brand}
-                  </h4>
-                  <p className="text-xs text-gray-600 truncate block font-normal leading-snug">
-                    {item.title}
-                  </p>
-                </div>
-                <div className="flex items-baseline gap-2 mt-2 flex-wrap">
-                  <span className="text-sm font-bold text-gray-900">
-                    ₹ {item.discountPrice.toLocaleString('en-IN')}
-                  </span>
-                  {item.originalPrice && (
-                    <span className="text-xs text-gray-400 line-through font-normal">
-                      ₹ {item.originalPrice.toLocaleString('en-IN')}
-                    </span>
-                  )}
-                  {item.discountPercent && (
-                    <span className="text-[11px] font-bold text-[#00a896]">
-                      {item.discountPercent}% OFF
-                    </span>
-                  )}
+              {/* Text info block with natural tight spacing */}
+              <div className="p-3 pt-4 bg-white flex flex-col justify-start rounded-b-xl">
+                <h4 className="text-[12px] sm:text-[13px] font-bold tracking-wider text-gray-900 uppercase block mb-0.5">
+                  {item.brand}
+                </h4>
+                <p className="text-xs text-gray-600 truncate block font-normal leading-snug mb-2">
+                  {item.title}
+                </p>
+                <div className="flex items-baseline gap-1.5 flex-wrap">
+                  <span className="text-sm font-bold text-gray-900">₹ {item.discountPrice}</span>
+                  <span className="text-xs text-gray-400 line-through">₹ {item.originalPrice}</span>
+                  <span className="text-[11px] font-bold text-[#00a896]">{item.discountPercent}% OFF</span>
                 </div>
               </div>
             </div>
@@ -1229,14 +1247,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1264,14 +1282,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1299,14 +1317,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1334,14 +1352,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1369,14 +1387,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1436,14 +1454,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1471,14 +1489,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1506,14 +1524,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1541,14 +1559,14 @@ body, html, h1, h2, h3, h4, h5, h6, p, span, a, button, input, div, strong, em, 
                   <Link
                     href="/wishlist"
                     aria-label="Add to wishlist"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
                   <Link
                     href="/cart"
                     aria-label="Add to cart"
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110 cursor-pointer"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110 cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
                   </Link>
@@ -1939,14 +1957,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
@@ -1978,14 +1996,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
@@ -2017,14 +2035,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
@@ -2056,14 +2074,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
@@ -2095,14 +2113,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
@@ -2134,14 +2152,14 @@ Shop Brand
         <Link
           href="/wishlist"
           aria-label="Add to wishlist"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-[#c8002e] flex items-center justify-center transition-all hover:scale-110"
         >
           <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
         <Link
           href="/cart"
           aria-label="Add to cart"
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center shadow-md border border-stone-200/80 transition-all hover:scale-110"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-stone-700 hover:text-black flex items-center justify-center transition-all hover:scale-110"
         >
           <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" />
         </Link>
