@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --accent-primary: #ff3f6c;
+  --accent-teal: #14cda8;
+}
+
+*, *::before, *::after {
+  font-family: 'Figtree', var(--font-figtree), sans-serif;
+  font-optical-sizing: auto;
+}
+
+html, body {
+  background-color: #ffffff;
+  color: #111827;
+  font-family: 'Figtree', var(--font-figtree), sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Figtree explicit weight utility classes matching Google Fonts */
+.font-figtree {
+  font-family: 'Figtree', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Luxury card hover dynamics matching Stitch */
+.product-card {
+  transition: box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom scrollbar utility */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

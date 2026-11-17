@@ -39,3 +39,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
+
+# Scratch and previews
+scratch/
+*.html
+*.tsbuildinfo
