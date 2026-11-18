@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { HangTag } from '@/components/ui/HangTag';
+import { WishlistIcon, BagIcon } from '@/components/ui/StoreIcons';
 import {
   ChevronRight,
   ChevronDown,
@@ -850,7 +851,7 @@ export default function CategoryPage() {
                         : 'text-gray-600 hover:text-black'
                     }`}
                   >
-                    <Heart className={`w-4 h-4 ${wishlist.has(quickViewProduct.id) ? 'fill-[#FF3F6C]' : ''}`} />
+                    <WishlistIcon className={`w-4 h-4 ${wishlist.has(quickViewProduct.id) ? 'fill-[#FF3F6C]' : ''}`} />
                   </button>
                 </div>
                 <div className="pt-3 text-center">
@@ -911,7 +912,7 @@ function ProductCard({
               isWishlisted ? 'text-[#FF3F6C]' : 'text-gray-700 hover:text-[#14CDA8]'
             }`}
           >
-            <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-[#FF3F6C] text-[#FF3F6C]' : ''}`} />
+            <WishlistIcon className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-[#FF3F6C] text-[#FF3F6C]' : ''}`} />
           </button>
         </div>
 

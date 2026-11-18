@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Search, User, ShoppingCart, Heart, Bell, ShoppingBag } from 'lucide-react';
+import { WishlistIcon, BagIcon } from '@/components/ui/StoreIcons';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -656,7 +657,7 @@ export const StorefrontHeader: React.FC = () => {
                 title="Wishlist"
               >
                 <div className="relative">
-                  <Heart className="w-5 h-5 text-slate-700 hover:text-black transition-colors" strokeWidth={1.75} />
+                  <WishlistIcon className="w-5 h-5 text-slate-700 hover:text-black transition-colors" />
                   <span className="absolute -top-1.5 -right-2 w-4 h-4 bg-[#FF3F6C] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                     3
                   </span>
@@ -674,7 +675,7 @@ export const StorefrontHeader: React.FC = () => {
                 title="Bag"
               >
                 <div className="relative">
-                  <ShoppingBag className="w-5 h-5 text-slate-700 hover:text-black transition-colors" strokeWidth={1.75} />
+                  <BagIcon className="w-5 h-5 text-slate-700 hover:text-black transition-colors" />
                   <span className="absolute -top-1.5 -right-2 w-4 h-4 bg-[#FF3F6C] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                     2
                   </span>
